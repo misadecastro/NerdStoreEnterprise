@@ -30,7 +30,7 @@ namespace NSE.WebApp.MVC.Services.Handlers
 
             var token = _user.ObterUserToken();
 
-            if(token != null)
+            if (token != null)
             {
                 request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
             }

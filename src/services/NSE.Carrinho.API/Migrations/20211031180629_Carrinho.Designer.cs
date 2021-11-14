@@ -38,7 +38,7 @@ namespace NSE.Carrinho.API.Migrations
                     b.HasIndex("ClienteId")
                         .HasName("IDX_Cliente");
 
-                    b.ToTable("CarrinhoClientes");
+                    b.ToTable("CarrinhoCliente");
                 });
 
             modelBuilder.Entity("NSE.Carrinho.API.Model.CarrinhoItem", b =>

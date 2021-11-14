@@ -14,7 +14,7 @@ namespace NSE.Identidade.API.Configuration
                 {
                     Title = "NerdStore Enterprise Identity API",
                     Description = "Esta API faz autenticação da aplicação NerdStore Enterprise",
-                    Contact = new OpenApiContact() { Name = "Misael de Castro Nazário", Email = "misadecastro@gmail.com" }
+                    Contact = new OpenApiContact() { Name = "Misael de Castro", Email = "misadecastro@gmail.com" },
 
                 });
             });
