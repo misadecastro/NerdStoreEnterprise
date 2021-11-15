@@ -36,7 +36,7 @@ namespace NSE.Bff.Compras.Controllers
         }
 
         [HttpPost]
-        [Route("compras/carrinho/items")]
+        [Route("compras/carrinho/itens")]
         public async Task<IActionResult> AdicionarItemCarrinho(ItemCarrinhoDTO itemProduto)
         {
             var produto = await _catalogoService.ObterPorId(itemProduto.ProdutoId);
@@ -66,7 +66,7 @@ namespace NSE.Bff.Compras.Controllers
         }
 
         [HttpDelete]
-        [Route("compras/carrinho/items/{produtoId}")]
+        [Route("compras/carrinho/{produtoId}")]
         public async Task<IActionResult> RemoverItemCarrinho(Guid produtoId)
         {
             var produto = await _catalogoService.ObterPorId(produtoId);
