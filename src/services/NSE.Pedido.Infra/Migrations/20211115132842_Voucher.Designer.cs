@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using NSE.Pedido.Infra.Data;
+using NSE.Pedidos.Infra.Data;
 
-namespace NSE.Pedido.Infra.Migrations
+namespace NSE.Pedidos.Infra.Migrations
 {
     [DbContext(typeof(PedidosContext))]
     [Migration("20211115132842_Voucher")]
@@ -22,7 +22,7 @@ namespace NSE.Pedido.Infra.Migrations
                 .HasAnnotation("Relational:Sequence:.MinhaSequencia", "'MinhaSequencia', '', '1000', '1', '', '', 'Int32', 'False'")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("NSE.Pedido.Domain.Voucher.Voucher", b =>
+            modelBuilder.Entity("NSE.Pedidos.Domain.Voucher.Voucher", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

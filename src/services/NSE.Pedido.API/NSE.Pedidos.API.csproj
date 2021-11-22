@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>61562447-e3e6-46f8-b8f8-fb46bb9ca03a</UserSecretsId>
   </PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="dapper" Version="2.0.35" />
@@ -18,7 +19,7 @@
     <ProjectReference Include="..\..\building blocks\NSE.Core\NSE.Core.csproj" />
     <ProjectReference Include="..\..\building blocks\NSE.MessageBus\NSE.MessageBus.csproj" />
     <ProjectReference Include="..\..\building blocks\NSE.WebAPI.Core\NSE.WebAPI.Core.csproj" />
-    <ProjectReference Include="..\NSE.Pedido.Infra\NSE.Pedido.Infra.csproj" />
+    <ProjectReference Include="..\NSE.Pedido.Infra\NSE.Pedidos.Infra.csproj" />
   </ItemGroup>
 
 

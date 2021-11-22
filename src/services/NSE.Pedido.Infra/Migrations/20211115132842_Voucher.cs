@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace NSE.Pedido.Infra.Migrations
+namespace NSE.Pedidos.Infra.Migrations
 {
     public partial class Voucher : Migration
     {

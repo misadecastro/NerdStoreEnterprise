@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using NSE.Core.Data;
-using NSE.Pedido.Domain.Voucher;
+using NSE.Pedidos.Domain.Vouchers;
 
-namespace NSE.Pedido.Infra.Data.Repository
+namespace NSE.Pedidos.Infra.Data.Repository
 {
     public class VoucherRepository : IVoucherRepository
     {

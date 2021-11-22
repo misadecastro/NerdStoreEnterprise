@@ -2,7 +2,7 @@
 using System;
 using System.Linq.Expressions;
 
-namespace NSE.Pedido.Domain.Voucher.Specs
+namespace NSE.Pedidos.Domain.Vouchers.Specs
 {
     public class VoucherDataSpecification : Specification<Voucher>
     {

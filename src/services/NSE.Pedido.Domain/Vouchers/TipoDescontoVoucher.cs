@@ -1,8 +1,8 @@
-﻿namespace NSE.Pedido.Domain.Voucher
+﻿namespace NSE.Pedidos.Domain.Vouchers
 {
     public enum TipoDescontoVoucher
     {
-        Percentagem = 0,
+        Porcentagem = 0,
         Valor = 1
     }
 }

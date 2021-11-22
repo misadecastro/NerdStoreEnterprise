@@ -34,12 +34,12 @@ namespace NSE.Carrinho.API.Controllers
         {
             var carrinho = await ObterCarrinhoCliente();
 
-            if(carrinho == null)
-                ManipularNovoCarrinho(item);            
+            if (carrinho == null)
+                ManipularNovoCarrinho(item);
             else
                 ManipularCarrinhoExistente(carrinho, item);
-            
-            if(!OperacaoValida())
+
+            if (!OperacaoValida())
                 return CustomResponse();
 
             await PersistirDados();
@@ -52,8 +52,8 @@ namespace NSE.Carrinho.API.Controllers
         {
             var carrinho = await ObterCarrinhoCliente();
             var itemCarrinho = await ObterItemCarrinhoValidado(produtoId, carrinho, item);
-            
-            if(itemCarrinho == null)
+
+            if (itemCarrinho == null)
                 return CustomResponse();
 
             carrinho.AtualizarUnidades(itemCarrinho, item.Quantidade);
@@ -86,6 +86,19 @@ namespace NSE.Carrinho.API.Controllers
             carrinho.RemoverItem(itemCarrinho);
 
             _context.CarrinhoItens.Remove(itemCarrinho);
+            _context.CarrinhoCliente.Update(carrinho);
+
+            await PersistirDados();
+            return CustomResponse();
+        }
+
+        [HttpPost]
+        [Route("carrinho/aplicar-voucher")]
+        public async Task<IActionResult> AplicarVOucher(Voucher voucher)
+        {
+            var carrinho = await ObterCarrinhoCliente();
+            carrinho.AplicarVoucher(voucher);
+
             _context.CarrinhoCliente.Update(carrinho);
 
             await PersistirDados();

@@ -47,7 +47,7 @@ namespace NSE.Clientes.API.Services
             using (var scope = _serviceProvider.CreateScope())
             {
                 var mediator = scope.ServiceProvider.GetRequiredService<IMediatorHandler>();
-                resultado = await mediator.EviarComando(clienteCommand);
+                resultado = await mediator.EnviarComando(clienteCommand);
             }
 
             return new ResponseMessage(resultado);

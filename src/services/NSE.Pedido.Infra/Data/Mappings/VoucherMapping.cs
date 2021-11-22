@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using NSE.Pedido.Domain.Voucher;
+using NSE.Pedidos.Domain.Vouchers;
 
-namespace NSE.Pedido.Infra.Data.Mappings
+namespace NSE.Pedidos.Infra.Data.Mappings
 {
     public class VoucherMapping : IEntityTypeConfiguration<Voucher>
     {

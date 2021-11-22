@@ -7,23 +7,24 @@ using NSE.Core.Data;
 using NSE.Core.DomainObjects;
 using NSE.Core.Mediator;
 using NSE.Core.Messages;
-using NSE.Pedido.Domain.Voucher;
+using NSE.Pedidos.Domain.Pedidos;
+using NSE.Pedidos.Domain.Vouchers;
 
-namespace NSE.Pedido.Infra.Data
+namespace NSE.Pedidos.Infra.Data
 {
     public class PedidosContext : DbContext, IUnitOfWork
     {
-        //private readonly IMediatorHandler _mediatorHandler;
+        private readonly IMediatorHandler _mediatorHandler;
 
-        public PedidosContext(DbContextOptions<PedidosContext> options)
+        public PedidosContext(DbContextOptions<PedidosContext> options, MediatorHandler mediatorHandler)
             : base(options)
         {
-            //_mediatorHandler = mediatorHandler;
+            _mediatorHandler = mediatorHandler;
         }
 
 
-        //public DbSet<Pedido> Pedidos { get; set; }
-        //public DbSet<PedidoItem> PedidoItems { get; set; }
+        public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<PedidoItem> PedidoItems { get; set; }
         public DbSet<Voucher> Vouchers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -62,7 +63,7 @@ namespace NSE.Pedido.Infra.Data
             }
 
             var sucesso = await base.SaveChangesAsync() > 0;
-            //if (sucesso) await _mediatorHandler.PublicarEventos(this);
+            if (sucesso) await _mediatorHandler.PublicarEventos(this);
 
             return sucesso;
         }

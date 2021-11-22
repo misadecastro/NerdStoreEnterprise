@@ -1,8 +1,8 @@
 ﻿using NSE.Core.DomainObjects;
 using System;
-using NSE.Pedido.Domain.Voucher.Specs;
+using NSE.Pedidos.Domain.Vouchers.Specs;
 
-namespace NSE.Pedido.Domain.Voucher
+namespace NSE.Pedidos.Domain.Vouchers
 {
     public class Voucher : Entity, IAggregateRoot
     {
@@ -29,6 +29,14 @@ namespace NSE.Pedido.Domain.Voucher
             Ativo = false;
             Utilizado = true;
             Quantidade = 0;
+        }
+
+        public void DebitarQuantidade()
+        {
+            Quantidade -= 1;
+            if (Quantidade >= 1) return;
+
+            MarcarComoUtilizado();
         }
     }
 }
