@@ -16,9 +16,8 @@ namespace NSE.Pedidos.API.Controllers
         private readonly IAspNetUser _user;
         private readonly IPedidoQueries _pedidoQueries;
 
-        public PedidoController(IMediatorHandler mediator,
-            IAspNetUser user,
-            IPedidoQueries pedidoQueries)
+        public PedidoController(IAspNetUser user,
+            IPedidoQueries pedidoQueries, IMediatorHandler mediator)
         {
             _mediator = mediator;
             _user = user;
